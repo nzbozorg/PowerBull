@@ -1,89 +1,212 @@
-# PowerBull 1.0.1
+<div align="center">
 
-A small, offline Android assistive utility for worn-out physical buttons. English and conversational Persian interfaces; original navy/red/gold identity, not affiliated with Red Bull or Apple.
+# 🐂 PowerBull
 
-## Changes in 1.0.1
+### Your buttons. Back in action.
 
-- Explicit horizontal/vertical centering of navigation and Quick controls labels under their icons; stable two-line label space.
-- Persistent English/Persian switch in the header (فا / EN). Persian content, consent dialogs, feedback, widget configuration and accessibility labels are localized. RTL content layout; header branding/version remain LTR for readability.
-- Gold coffee icon in the header and gold support button in About, both opening the existing donation URL only on a user tap.
-- versionCode 2; same application ID and release signing certificate as 1.0.0, allowing an in-place update without clearing settings.
+**Floating controls and home-screen widgets that put your phone back within reach.**
 
-## Requirements
+**Android 9+ · English & فارسی · No root · No ads · Offline**
 
-- Android 9 (API 28) or newer. This baseline is intentional: screen locking uses the official Accessibility global action, not legacy Device Admin or root.
-- Display-over-other-apps permission and the PowerBull accessibility service. Both are explained in the setup wizard, and the controls screen stays gated until granted.
-- Universal APK: pure Java/resources, no native libraries or ABI splits. This does **not** guarantee compatibility with every OEM, restricted work profile, Android Go edition, or future Android release.
+[🇮🇷 فارسی](README.fa.md) · [📦 Release notes](RELEASE_NOTES.md) · [💛 Support development](https://coffeebede.com/Amir_NoZohour)
 
-## Features
+</div>
 
-- Lock screen, system power menu, media volume up/down, Home, Back and Recents.
-- Floating icon-only menu, draggable bubble with animated edge snapping and saved side/vertical position.
-- 30–100% opacity, 44–76 dp bubble size, optional idle fading and haptic feedback.
-- Configurable action membership/order: switch an action off/on to append it. One action must remain. Settings/close icons are always available.
-- Press and hold either floating volume control for repeating volume adjustment.
-- Individually configurable home-screen button widgets for all seven actions. Add multiple instances and resize through your launcher.
-- Unobtrusive optional donation link only in About: https://coffeebede.com/Amir_NoZohour
-- No ads, analytics, account, network permission, root, storage access, or screen-content access.
+---
 
-## Install & setup
+## ✨ What is PowerBull?
 
-1. Install the release APK from a trusted file manager (allow installation from that source if Android asks).
-2. Open PowerBull and grant Display over other apps.
-3. Read the in-app accessibility disclosure and choose **I agree · Open settings**. Enable **PowerBull controls**.
-4. Return to PowerBull; enable the Floating button switch on Controls.
-5. Tap the bubble to open, drag to reposition, long-press it to open PowerBull settings.
+A broken button shouldn't make your phone harder to use.
 
-Android 13+ may restrict Accessibility for sideloaded apps: open Android Settings → Apps → PowerBull → the overflow menu → Allow restricted settings, **only if you trust this APK**, then return to Accessibility. Exact wording varies by manufacturer. PowerBull never enables its own permissions.
+PowerBull brings everyday hardware and navigation controls to a compact floating menu and configurable home-screen widgets. Whether your physical buttons are worn out or you simply prefer a gentler way to use your phone, your essential controls are just a tap away.
 
-For widgets, use Widgets → + Add. If your launcher does not support in-app pinning, long-press your home screen → Widgets → PowerBull button and select the desired action. Pinning behavior and sizing are launcher-dependent.
+An original navy, red and gold interface keeps things clear, compact and out of your way.
 
-## Android limitations
+## 🎛️ Your everyday controls
 
-- A software button cannot power on a completely switched-off phone, wake a sleeping display, or bypass the lock screen. Do not switch off a phone whose power button cannot turn it back on.
-- The power action **opens the Android power menu**, not a forced power-off/reboot. Available actions vary by OS/OEM.
-- Volume is **media** volume, not call/ringer/alarm volume. Remote devices, fixed-volume routes, DND and manufacturer policies may limit changes.
-- Android can hide third-party overlays on secure screens, permission prompts, lock screens or sensitive applications.
-- Some OEMs aggressively stop apps; revisit Accessibility and manufacturer battery/background settings if the bubble disappears. No exemption is silently requested.
-- The accessibility service owns the overlay lifecycle. There is no foreground-service notification and no independent background job. After restart, Android may require first unlock before binding it.
-- Turning off Accessibility removes the floating controls; all permissions remain revocable in Android Settings.
+| Control | What it does |
+| --- | --- |
+| 🔒 Lock screen | Locks the device and turns the display off using Android's accessibility action. |
+| ⏻ Power menu | Opens the system power menu, where supported. |
+| 🔊 Volume up | Raises media volume. |
+| 🔉 Volume down | Lowers media volume. |
+| 🏠 Home | Returns to the home screen. |
+| ↩️ Back | Performs Android's Back action. |
+| ▣ Recent apps | Opens the recent-apps overview. |
 
-## Build from source
+> **Important:** PowerBull cannot turn on a powered-off phone, wake a sleeping display, or bypass the lock screen. If your power button is broken, make sure you have a reliable way to turn the phone back on before shutting it down.
 
-Open this directory in Android Studio with **JDK 17**, Android SDK Platform 35 and Build Tools 35.0.0 installed. AGP 8.7.3 and Gradle 8.9 are pinned; no third-party runtime dependencies.
+## 🫧 Small panel. Your rules.
+
+- **Icon-only floating menu** — useful controls without a wall of text.
+- **Drag to move** — the bubble snaps to the nearest edge with an animation.
+- **Remembered position** — your preferred side and vertical position are saved.
+- **Choose your buttons** — keep one action or build a fuller panel; at least one action stays enabled.
+- **Adjust the look** — panel opacity from **30–100%**, bubble size from **44–76 dp**.
+- **Optional idle fading** — make the bubble less noticeable when you're not using it.
+- **Optional touch feedback** — a gentle vibration on floating controls.
+- **Hold to adjust volume** — long-press a floating volume button for repeated changes.
+- **Easy access to settings** — long-press the bubble or use the panel's settings icon.
+
+To move an action to the end of the panel, switch it off and back on in **Personalize**. Settings and Close remain available in the expanded panel.
+
+## 🧩 Widgets that fit your home screen
+
+Add independent widgets for any of the seven actions. Use a single Lock screen shortcut or add several different controls — each widget keeps its own action.
+
+Add widgets from PowerBull's **Widgets** tab, or from your launcher's widget picker. Sizing, resizing and in-app pinning support depend on your launcher.
+
+## 🌍 English or فارسی
+
+Switch languages using the **فا / EN** button beside the version number in the header.
+
+Persian uses natural, conversational wording and right-to-left content layout. Your language choice is saved. Controls, setup explanations, dialogs, widget action names and feedback messages are localized.
+
+## 📥 Install & get started
+
+1. Download `PowerBull-1.0.1-universal-release.apk` from this repository's **Releases** section.
+2. Open the APK and allow installation from your chosen file manager or browser if Android asks. Install only from a source you trust.
+3. Open PowerBull and follow the setup wizard:
+   - Enable **Display over other apps**.
+   - Read and accept the accessibility disclosure, then enable **PowerBull controls** in Android Accessibility settings.
+4. Return to the app and turn on **Floating button** in **Controls**.
+5. Tap the bubble to expand it, drag it to move it, and customize it in **Personalize**.
+
+### Updating from 1.0.0
+
+Install the official 1.0.1 APK over the previous release. It uses the same application ID and signing certificate, so uninstalling first is not necessary. Keep your existing settings.
+
+### 🔐 Android's restricted settings
+
+Some Android 13+ devices restrict Accessibility for sideloaded applications. If Android blocks enabling PowerBull:
+
+**Settings → Apps → PowerBull → overflow menu → Allow restricted settings**
+
+Then return to Accessibility and enable PowerBull controls. Menu names vary by manufacturer. Only allow this if you trust the APK. PowerBull never enables permissions on your behalf.
+
+## 🛡️ Permissions & privacy
+
+| Access | Why it is needed |
+| --- | --- |
+| Display over other apps | Shows the floating bubble and panel over other applications. |
+| Accessibility service | Performs Lock screen, Power menu, Home, Back and Recents when you choose those controls. |
+| Modify audio settings | Adjusts media volume; no separate runtime prompt is normally required. |
+
+**Your phone stays yours:**
+
+- No advertising, analytics, trackers or account requirement.
+- No `INTERNET` permission and no data transmission by the app.
+- No screen-content retrieval, activity monitoring, text entry or screen recording.
+- Accessibility events are not subscribed to; the service acts on the control you choose.
+- Settings stay locally on your device; app backup is disabled.
+- Permissions can be revoked in Android Settings at any time.
+
+The optional support button opens an external browser. The donation website has its own privacy practices.
+
+## ⚠️ Know the Android limits
+
+- **Android 9 / API 28 or newer is required.** Screen locking uses an official accessibility action, not root or legacy Device Admin.
+- **Universal does not mean every phone is guaranteed.** The APK has no native ABI-specific libraries, but OEM restrictions, work profiles and Android editions can affect functionality.
+- **Power menu is not forced shutdown.** Android and your manufacturer decide which power controls are available.
+- **Volume controls are for media**, not dedicated call, alarm or ringer volume. Audio routes and system policies can limit changes.
+- **Secure screens can hide overlays**, including permission dialogs and sensitive apps.
+- **Battery restrictions can affect availability.** If the bubble disappears, check Accessibility and your manufacturer's background-app settings.
+- **After a restart**, Android may require your first unlock before starting the accessibility service.
+
+For the verification scope and suggested device checks, see [TESTING.md](TESTING.md). The release has passed compilation, signature verification and static checks; that is not a guarantee of exhaustive device compatibility.
+
+## 🛠️ Build from source
+
+### Toolchain
+
+| Component | Version |
+| --- | --- |
+| Language | Java |
+| JDK | 17 |
+| Minimum Android | 9 / API 28 |
+| Compile / target SDK | 35 |
+| Android Build Tools | 35.0.0 |
+| Android Gradle Plugin | 8.7.3 |
+| Gradle Wrapper | 8.9 |
+| Application ID | `com.powerbull.app` |
+
+Open the project in Android Studio and install the required SDK components. There are no third-party runtime dependencies.
 
 ```sh
-# Development build (uses a separate debug key)
+# Build a development APK
 ./gradlew assembleDebug
 
-# Static Android checks
+# Run Android static checks
 ./gradlew lintRelease
+
+# Run source/resource regression checks (Python 3)
+python3 tests/verify_update.py
 ```
 
-The release signing key is intentionally **not included in the source ZIP**. The separate, private signing backup contains `powerbull-release.jks` and its password. To produce an update compatible with the delivered APK:
+On Windows, use `gradlew.bat` instead of `./gradlew`.
 
-1. Put that keystore at `signing/powerbull-release.jks`.
-2. Set `PB_STORE_PASSWORD` in your environment to the supplied password.
-3. Run:
+### 🔑 Signed release builds
+
+Private signing files are **not part of the public source**.
+
+The current Gradle configuration expects a keystore at `signing/powerbull-release.jks`, alias `powerbull`, and its password in the `PB_STORE_PASSWORD` environment variable. Use your own signing identity for an independent build; never request or publish the maintainer's private key.
 
 ```sh
+# After configuring your local signing key and environment
 ./gradlew assembleRelease
 ```
 
-APK: `app/build/outputs/apk/release/app-release.apk`.
+Output: `app/build/outputs/apk/release/app-release.apk`.
 
-Keep application ID `com.powerbull.app` and the same signing key for updates; increment `versionCode`. Do not publish the signing backup or password. If creating your own separate signing identity, generate a new keystore and adjust the signing configuration; it cannot update installations of this APK without uninstalling.
+A build signed with a different key cannot update the official APK in place. Official updates must keep the original application ID and release key and increase `versionCode`.
 
-## Project layout
+## 🗂️ Project map
 
-- `MainActivity`: setup wizard, controls, personalization, widgets and about.
-- `BullService`: accessibility global actions and floating overlay lifecycle.
-- `Actions`: shared volume/system action dispatch, with failure feedback.
-- `Prefs`: local-only settings.
-- `BullWidget` / `WidgetConfigActivity` / `ActionActivity`: configurable independent widget instances and explicit immutable PendingIntents.
+```text
+app/src/main/
+├── java/com/powerbull/app/
+│   ├── MainActivity.java          # Setup, controls, personalization and About
+│   ├── BullService.java           # Accessibility actions and floating UI
+│   ├── Actions.java               # Shared action dispatch
+│   ├── BullWidget.java            # Independent widget instances
+│   ├── WidgetConfigActivity.java  # Widget action picker
+│   ├── ActionActivity.java        # Widget action entry point
+│   ├── L10n.java                  # Saved app language and localized resources
+│   └── Prefs.java                 # Local preferences
+└── res/                           # Icons, layouts and EN/FA resources
+```
 
-## Privacy and distribution
+## 🤝 Feedback & contributions
 
-The app has no INTERNET permission and transmits no data. The donation button opens an external browser, where that site's policies apply. Accessibility has no event subscriptions, requests no view hierarchy, and processes no screen content. Backup is disabled.
+Found a problem or have an idea? Open an issue in this repository. For bugs, please include:
 
-The APK is a signed release build, not a claim of Google Play certification or exhaustive device testing. Review current Play accessibility, target SDK and disclosure policies before publishing to a store. See TESTING.md for the actual verification scope and outstanding device checks.
+- Phone model and Android version.
+- PowerBull version and selected language.
+- Steps to reproduce, expected behavior and what actually happened.
+- A screenshot or recording when helpful — remove personal information first.
+
+For larger changes, discuss the idea in an issue before opening a pull request. Please keep accessibility, privacy, compact controls and both languages in mind.
+
+## 💛 Support PowerBull
+
+If PowerBull makes your day easier, you can support its development with a coffee:
+
+**[☕ Buy Amir a coffee](https://coffeebede.com/Amir_NoZohour)**
+
+Completely optional. No locked features, donation pop-ups or reminders. The support shortcut is available in the header and in About.
+
+---
+
+<div align="center">
+
+**🐂 PowerBull — A small touch. More control.**
+
+An independent project. Not affiliated with, endorsed by, or sponsored by Red Bull or Apple.
+
+</div>
+
+## 📄 License
+
+PowerBull is licensed under the **Apache License 2.0**. See [LICENSE](LICENSE) for the full terms.
+
+You may use, modify and redistribute the project, including commercially, subject to the license conditions. Keep the required license and attribution notices, mark modified files, and preserve applicable NOTICE attributions if provided. The software is provided **“AS IS,” without warranties or conditions of any kind**. This license does not grant rights to project names or trademarks.
