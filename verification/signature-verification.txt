@@ -1,0 +1,17 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=PowerBull, OU=Independent Android App, O=PowerBull
+Signer #1 certificate SHA-256 digest: ffe10f83b45b2cd226ce8e78ddc275f8488c160bbe16e8c0cf143daca21a3425
+Signer #1 certificate SHA-1 digest: db5cc84a86d4f1932b81f4d1dabdbbe1394e41e4
+Signer #1 certificate MD5 digest: dd23cfe587f1e1a241dd47b45c860e9d
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 3072
+Signer #1 public key SHA-256 digest: f8d0f60235c8d6126bf6106133bed7c7c387fe5d2dce8295dbe1b7d07c53c86a
+Signer #1 public key SHA-1 digest: 7ff599e88850e8d850d1192d4e289c0b220f2268
+Signer #1 public key MD5 digest: 1aecda3c26c9f7b972fd51030d549ad5

@@ -1,0 +1,165 @@
+/home/user/PowerBull/app/src/main/res/xml/accessibility.xml:1: Warning: Attribute isAccessibilityTool is only used in API level 31 and higher (current min is 28) [UnusedAttribute]
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android" android:description="@string/accessibility_description" android:settingsActivity="com.powerbull.app.MainActivity" android:accessibilityFeedbackType="feedbackGeneric" android:notificationTimeout="100" android:canRetrieveWindowContent="false" android:isAccessibilityTool="true" />
+                                                                                                                                                                                                                                                                                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/PowerBull/app/src/main/res/xml/widget.xml:1: Warning: Attribute targetCellHeight is only used in API level 31 and higher (current min is 28) [UnusedAttribute]
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android" android:minWidth="56dp" android:minHeight="56dp" android:targetCellWidth="1" android:targetCellHeight="1" android:updatePeriodMillis="0" android:initialLayout="@layout/widget" android:configure="com.powerbull.app.WidgetConfigActivity" android:resizeMode="horizontal|vertical" android:widgetCategory="home_screen" android:description="@string/widget_name" android:previewImage="@drawable/ic_power" />
+                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/PowerBull/app/src/main/res/xml/widget.xml:1: Warning: Attribute targetCellWidth is only used in API level 31 and higher (current min is 28) [UnusedAttribute]
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android" android:minWidth="56dp" android:minHeight="56dp" android:targetCellWidth="1" android:targetCellHeight="1" android:updatePeriodMillis="0" android:initialLayout="@layout/widget" android:configure="com.powerbull.app.WidgetConfigActivity" android:resizeMode="horizontal|vertical" android:widgetCategory="home_screen" android:description="@string/widget_name" android:previewImage="@drawable/ic_power" />
+                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedAttribute":
+   This check finds attributes set in XML files that were introduced in a
+   version newer than the oldest version targeted by your application (with
+   the minSdkVersion attribute).
+
+   This is not an error; the application will simply ignore the attribute.
+   However, if the attribute is important to the appearance or functionality
+   of your application, you should consider finding an alternative way to
+   achieve the same result with only available attributes, and then you can
+   optionally create a copy of the layout in a layout-vNN folder which will be
+   used on API NN or higher where you can take advantage of the newer
+   attribute.
+
+   Note: This check does not only apply to attributes. For example, some tags
+   can be unused too, such as the new <tag> element in layouts introduced in
+   API 21.
+
+/home/user/PowerBull/app/src/main/java/com/powerbull/app/L10n.java:19: Warning: Found dynamic locale changes, but did not find corresponding Play Core library calls for downloading languages and splitting by language is not disabled in the bundle configuration [AppBundleLocaleChanges]
+    config.setLocales(new LocaleList(locale));
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "AppBundleLocaleChanges":
+   When changing locales at runtime (e.g. to provide an in-app language
+   switcher), the Android App Bundle must be configured to not split by locale
+   or the Play Core library must be used to download additional locales at
+   runtime.
+
+   https://developer.android.com/guide/app-bundle/configure-base#handling_language_changes
+
+/home/user/PowerBull/app/src/main/AndroidManifest.xml:4: Warning: The attribute android:dataExtractionRules only applies for Android 12 and higher; since minSdkVersion is API 28 you should also set android:fullBackupContent [DataExtractionRules]
+ <application android:theme="@style/AppTheme" android:label="@string/app_name" android:icon="@drawable/ic_launcher" android:allowBackup="false" android:dataExtractionRules="@xml/backup_rules" android:supportsRtl="true">
+                                                                                                                                                                             ~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "DataExtractionRules":
+   Before Android 12, the attributes android:allowBackup and
+   android:fullBackupContent were used to configure all forms of backup,
+   including cloud backups, device-to-device transfers and adb backup.
+
+   In Android 12 and higher, these attributes have been deprecated and will
+   only apply to cloud backups. You should instead use the attribute
+   android:dataExtractionRules, specifying an @xml resource that configures
+   which files to back up, for cloud backups and for device-to-device
+   transfers, separately. If your minSdkVersion supports older versions,
+   you'll still want to specify an android:fullBackupContent resource if the
+   default behavior is not right for your app.
+
+   https://developer.android.com/about/versions/12/backup-restore#xml-changes
+   https://goo.gle/DataExtractionRules
+
+/home/user/PowerBull/app/src/main/java/com/powerbull/app/BullService.java:15: Warning: Do not place Android context classes in static fields (static reference to BullService which has field bubble pointing to View); this is a memory leak [StaticFieldLeak]
+  public static BullService live;
+         ~~~~~~
+
+   Explanation for issues of type "StaticFieldLeak":
+   A static field will leak contexts.
+
+   Non-static inner classes have an implicit reference to their outer class.
+   If that outer class is for example a Fragment or Activity, then this
+   reference means that the long-running handler/loader/task will hold a
+   reference to the activity which prevents it from getting garbage
+   collected.
+
+   Similarly, direct field references to activities and fragments from these
+   longer running instances can cause leaks.
+
+   ViewModel classes should never point to Views or non-application Contexts.
+
+/home/user/PowerBull/app/src/main/res/values/localization.xml:96: Warning: The resource R.string.pb_094 appears to be unused [UnusedResources]
+<string name="pb_094">"PowerBull button"</string>
+        ~~~~~~~~~~~~~
+/home/user/PowerBull/app/src/main/res/values/localization.xml:97: Warning: The resource R.string.pb_095 appears to be unused [UnusedResources]
+<string name="pb_095">"PowerBull controls"</string>
+        ~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+/home/user/PowerBull/app/src/main/java/com/powerbull/app/BullService.java:126: Warning: Custom view `ImageButton` has setOnTouchListener called on it but does not override performClick [ClickableViewAccessibility]
+    b.setOnTouchListener(
+    ^
+/home/user/PowerBull/app/src/main/java/com/powerbull/app/BullService.java:132: Warning: onTouch should call View#performClick when a click is detected [ClickableViewAccessibility]
+          public boolean onTouch(View v, android.view.MotionEvent e) {
+                         ~~~~~~~
+/home/user/PowerBull/app/src/main/java/com/powerbull/app/BullService.java:283: Warning: Custom view `LinearLayout` has setOnTouchListener called on it but does not override performClick [ClickableViewAccessibility]
+    box.setOnTouchListener(
+    ^
+/home/user/PowerBull/app/src/main/java/com/powerbull/app/BullService.java:284: Warning: onTouch lambda should call View#performClick when a click is detected [ClickableViewAccessibility]
+        (v, e) -> {
+        ^
+/home/user/PowerBull/app/src/main/java/com/powerbull/app/BullService.java:324: Warning: Custom view `ImageButton` has setOnTouchListener called on it but does not override performClick [ClickableViewAccessibility]
+    button.setOnTouchListener(
+    ^
+/home/user/PowerBull/app/src/main/java/com/powerbull/app/BullService.java:325: Warning: onTouch lambda should call View#performClick when a click is detected [ClickableViewAccessibility]
+        (v, e) -> {
+        ^
+
+   Explanation for issues of type "ClickableViewAccessibility":
+   If a View that overrides onTouchEvent or uses an OnTouchListener does not
+   also implement performClick and call it when clicks are detected, the View
+   may not handle accessibility actions properly. Logic handling the click
+   actions should ideally be placed in View#performClick as some accessibility
+   services invoke performClick when a click action should occur.
+
+/home/user/PowerBull/app/src/main/java/com/powerbull/app/MainActivity.java:496: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            label.setText(name + "  ·  " + value + unit);
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+/home/user/PowerBull/app/src/main/java/com/powerbull/app/BullService.java:90: Warning: Use "Gravity.START" instead of "Gravity.LEFT" to ensure correct behavior in right-to-left locales [RtlHardcoded]
+    p.gravity = Gravity.TOP | Gravity.LEFT;
+                                      ~~~~
+
+   Explanation for issues of type "RtlHardcoded":
+   Using Gravity#LEFT and Gravity#RIGHT can lead to problems when a layout is
+   rendered in locales where text flows from right to left. Use Gravity#START
+   and Gravity#END instead. Similarly, in XML gravity and layout_gravity
+   attributes, use start rather than left.
+
+   For XML attributes such as paddingLeft and layout_marginLeft, use
+   paddingStart and layout_marginStart. NOTE: If your minSdkVersion is less
+   than 17, you should add both the older left/right attributes as well as the
+   new start/end attributes. On older platforms, where RTL is not supported
+   and the start/end attributes are unknown and therefore ignored, you need
+   the older left/right attributes. There is a separate lint check which
+   catches that type of error.
+
+   (Note: For Gravity#LEFT and Gravity#START, you can use these constants even
+   when targeting older platforms, because the start bitmask is a superset of
+   the left bitmask. Therefore, you can use gravity="start" rather than
+   gravity="left|start".)
+
+0 errors, 16 warnings

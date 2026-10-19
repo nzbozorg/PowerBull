@@ -1,0 +1,8 @@
+<resources>
+<string name="app_name">PowerBull</string>
+<string name="accessibility_description">PowerBull uses Accessibility only when you tap its controls to lock the screen, open the power menu, or perform Home, Back and Recents. It does not read screen content, monitor your activity, collect personal information or send data. You can disable it anytime in Android Accessibility settings.</string>
+<string name="widget_name">PowerBull button</string>
+<style name="AppTheme" parent="android:style/Theme.Material.NoActionBar"><item name="android:fontFamily">sans</item><item name="android:windowLightStatusBar">false</item><item name="android:colorAccent">#FF3655</item><item name="android:windowActionModeOverlay">true</item><item name="android:windowBackground">#080F24</item><item name="android:navigationBarColor">#080F24</item><item name="android:statusBarColor">#080F24</item><item name="android:windowLightNavigationBar">false</item></style>
+<style name="TransparentTheme" parent="AppTheme"><item name="android:windowIsTranslucent">true</item><item name="android:windowBackground">@android:color/transparent</item><item name="android:windowNoTitle">true</item><item name="android:backgroundDimEnabled">false</item></style>
+<string name="service_label">PowerBull controls</string>
+</resources>
